@@ -1,0 +1,7 @@
+- [ ] board size
+- [ ] score
+- [ ] mobile
+- [ ] ? new game button
+- [ ] ? undo/redo
+- [ ] ? hight score
+- [ ] ? progress
