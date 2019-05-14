@@ -1,0 +1,14 @@
+.vscode
+.DS_Store
+
+npm-debug.log*
+node_modules
+package-lock.json
+.npm
+.eslintcache
+.node_repl_history
+log
+*.log
+
+dist
+config.js
