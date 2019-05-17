@@ -4,41 +4,46 @@ import './style.scss';
 
 import Cell from '../cell';
 
-const Board = ({ size }) => {
-  // const CELLS_COUNT = size * size;
-  const CELL_SIZE_IN_PERCENT = `${100 / size}%`;
-  const CELLS = [
-    [0, 0, 0, 2],
-    [0, 0, 2, 0],
-    [0, 0, 0, 0],
-    [0, 0, 0, 0],
-  ];
-  
-  const initBoard = () => {
-    return CELLS.map( (row, i) => 
-      row.map( (cell, j) => 
-        <Cell 
-          key={`${i}-${j}`} 
-          size={CELL_SIZE_IN_PERCENT} 
-          number={cell} 
+class Board extends React.Component {
+
+  initBoard = (matrix) => {
+    return matrix.map( (row, i) =>
+      row.map( (cell, j) =>
+        <Cell
+          key={`${i}-${j}`}
+          number={cell}
         />
       )
     );
   };
 
-  return (
-    <div className='board-wrapper'>
-      {initBoard()}
-    </div>
-  );
-};
+  handleKeyboard = (e) => {
+    console.log("++++++++++++")
+    // 37-40
+  };
+
+  componentDidMount() {
+    window.addEventListener('keydown', this.handleKeyboard);
+  }
+  componentWillUnmount() {
+    window.removeEventListener('keydown', this.handleKeyboard);
+  }
+  render() {
+    const { matrix } = this.props;
+    return (
+      <div className='board-wrapper'>
+        {this.initBoard(matrix)}
+      </div>
+    );
+  }
+}
 
 Board.propTypes = {
-  size: PropTypes.number,
+  matrix: PropTypes.array,
 };
 
-Board.defaultProps = {
-  size: 4,
-};
+// Board.defaultProps = {
+//   size: 4,
+// };
 
 export default Board;

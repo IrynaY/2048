@@ -2,9 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './style.scss';
 
-const Cell = ({ size, number }) => (
-  <div className='cell-wrapper' style={{minWidth: size, minHeight: size}}>
-    {number > 0 ? number : ''}
+const Cell = ({ number }) => (
+  <div className='cell-wrapper' style={{minWidth: '25%', minHeight: '25%'}}>
+    {number}
+    {/* {number > 0 ? number : ''} */}
   </div>
 );
 
