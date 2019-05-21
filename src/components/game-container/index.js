@@ -25,20 +25,19 @@ class GameContainer extends React.Component {
 
   movementHandler = ( newMatrix, totalPoints, haveFinish ) => {
     const { matrix, score, updateBoard, updateScore, updateGameStatus, updateStepsStatus } = this.props;
-    console.log(matrix)
 
     if(JSON.stringify(newMatrix) !== JSON.stringify(matrix)){
       setRandomEmptyCell(newMatrix);
       updateBoard(newMatrix);
-      if(totalPoints>0){
+      if(totalPoints>0)
         updateScore(totalPoints + score);
-      }
+
       if(haveFinish)
         updateGameStatus(haveFinish);
     }
+
     if(!haveAvailableStep(newMatrix))
       updateStepsStatus(false);
-    console.log(newMatrix)
   }
 
   onKeyDown = (e) => {
@@ -52,25 +51,24 @@ class GameContainer extends React.Component {
     }
   }
 
-  closeModal = () => this.setState({showModal: false})
+  closeModal = () => this.setState({ showModal: false })
 
-  render(){
-    const { matrix, score, resetGame, haveSteps, isFinish } = this.props;
+  render() {
+    const { matrix, score, resetGame, haveSteps/*, isFinish */} = this.props;
     return (
       <div id='game'>
-        {/* <div className='game-controls'>
+        <div className='game-controls'>
           <Score score={score}/>
           <button onClick={resetGame} className='btn'>New game</button>
-        </div> */}
+        </div>
 
         <Board matrix={matrix}/>
 
         <Modal isOpen={!haveSteps} title={'GAME OVER'}>
-          <p className='lose'></p>
           <button onClick={resetGame} className='btn'>New game</button>
         </Modal>
 
-        <Modal isOpen={this.state.showModal} title={' YOU WON !!!'}>
+        <Modal isOpen={this.state.showModal} title={'🎉 YOU WON !!!'}>
           <div className='btn-group'>
             <button onClick={resetGame} className='btn'>New game</button>
             <button onClick={this.closeModal} className='btn'>Continue</button>
@@ -80,6 +78,24 @@ class GameContainer extends React.Component {
     );
   }
 }
+
+GameContainer.propTypes = {
+  matrix: PropTypes.array.isRequired,
+  score: PropTypes.number,
+  haveSteps: PropTypes.bool,
+  resetGame: PropTypes.func,
+  updateBoard: PropTypes.func,
+  updateScore: PropTypes.func,
+  updateGameStatus: PropTypes.func,
+  updateStepsStatus: PropTypes.func,
+  isFinish: PropTypes.bool
+};
+
+GameContainer.defaultProps = {
+  score: 0,
+  haveSteps: false,
+  isFinish: false
+};
 
 export default connect(
   ({ score, matrix, haveSteps, isFinish }) => ({ score, matrix, haveSteps, isFinish }),

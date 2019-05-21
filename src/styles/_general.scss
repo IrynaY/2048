@@ -10,7 +10,7 @@ html, body {
 }
 
 .btn {
-  background: #BBAD9F;
+  background: $grey;
   margin: 10px;
   padding: 20px;
   font-size: 14px;
@@ -22,7 +22,7 @@ html, body {
 
   &:hover {
       cursor: pointer;
-      background: #f2b179;
+      background: $orange;
   }
 }
 

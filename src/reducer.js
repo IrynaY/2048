@@ -27,6 +27,12 @@ export const initialState = {
   //   [0, 0, 2, 0],
   //   [2, 2, 2, 2],
   // ]
+  // matrix: [
+  //   [1024, 1024, 0, 0],
+  //   [0, 0, 0, 0],
+  //   [0, 1024, 2, 0],
+  //   [2, 1024, 2, 2],
+  // ]
 };
 
 function initMatrix() {
@@ -36,7 +42,7 @@ function initMatrix() {
     [0, 0, 0, 0],
     [0, 0, 0, 0],
   ];
-  setRandomEmptyCell(setRandomEmptyCell(matrix));
+  setRandomEmptyCell( setRandomEmptyCell(matrix) );
   return matrix;
 }
 

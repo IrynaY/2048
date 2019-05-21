@@ -1,19 +1,20 @@
+export const WIN_NUMBER = 2048;
+
 const calculateRowShift = array => {
-  // ?? add finish checker
   const row = array.map(() => 0);
   let index = 0;
   let points = 0;
   let haveWon = false;
   array.forEach( value => {
     if(value !== 0){
-      if(value === row[index]){
+      if(value === row[index]) {
         row[index] *= 2;
-        if(row[index]=== 2048)
+        if(row[index] === WIN_NUMBER)
           haveWon = true;
         points += row[index];
         index++;
       }
-      else if(row[index] === 0){
+      else if(row[index] === 0) {
         row[index] = value;
       }
       else {
@@ -27,7 +28,7 @@ const calculateRowShift = array => {
 
 const rotateMatrix = matrix => matrix.map( (row, i) => row.map( (value, j) => matrix[j][i]));
 
-export function setRandomEmptyCell(matrix){
+export const setRandomEmptyCell = matrix => {
   const emptyCells = [];
   matrix.forEach(( row, i ) =>
     row.forEach(( cell, j ) => {
@@ -40,25 +41,24 @@ export function setRandomEmptyCell(matrix){
     matrix[ emptyCells[random].x ][ emptyCells[random].y ] = Math.random() < 0.9 ? 2 : 4;
   }
   return matrix;
-}
+};
 
 export const haveAvailableStep = matrix => {
   const length = matrix.length;
-  for(let i = 0; i < length; i++){
-    for(let j = 0; j < length; j++){
+  for(let i = 0; i < length; i++) {
+    for(let j = 0; j < length; j++) {
       if(matrix[i][j] === 0)
         return true;
 
-      if( j+1 < length && i+1 < length){
-        if( matrix[i][j] === matrix[i][j+1] || matrix[i][j] === matrix[i+1][j] ){
+      if(j+1 < length && i+1 < length) {
+        if(matrix[i][j] === matrix[i][j+1] || matrix[i][j] === matrix[i+1][j])
           return true;
-        }
       }
-      else if(i+1 === length){
+      else if(i+1 === length) {
         if(matrix[i][j] === matrix[i][j+1])
           return true;
       }
-      else if(j+1 === matrix[i].length){
+      else if(j+1 === matrix[i].length) {
         if(matrix[i][j] === matrix[i+1][j])
           return true;
       }

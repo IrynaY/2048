@@ -8,22 +8,22 @@
 }
 
 .modal-window {
-  position: absolute;
-  background-color: white;
   padding: 50px 60px;
+  position: absolute;
   top: 50%;
   left: 50%;
+  background-color: white;
   transform: translate(-50%, -50%);
   display: flex;
   flex-direction: column;
   text-align: center;
 }
 
-.title{
+.title {
   font-size: 25px;
-  font-weight: bold;
   border-radius: 3px;
-  color: #f67c5f;
+  font-weight: bold;
+  color: $orange;
 }
 
 @media screen and (max-width: 768px) {

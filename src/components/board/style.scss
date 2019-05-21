@@ -3,11 +3,11 @@
   height: 400px;
   padding: 5px;
   margin: 5px;
+  border-radius: 10px;
+  font-size: 38px;
   display: flex;
   flex-wrap: wrap;
-  border-radius: 10px;
-  background: #bbada0;
-  font-size: 38px;
+  background: $grey;
 }
 
 @media screen and (max-width: 425px) {
