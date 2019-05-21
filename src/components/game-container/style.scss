@@ -1,0 +1,22 @@
+#game {
+    display: inline-block;
+    margin: 50px auto;
+}
+
+.game-controls {
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn-group {
+    display: flex;
+    justify-content: space-between;
+    margin: 15px;
+}
+
+@media screen and (max-width: 425px) {
+    .btn-group {
+        margin: 0;
+    }
+  }
+  

@@ -1,8 +1,7 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
 
-import Game from './components/game';
+import GameContainer from './components/game-container';
 
-const App = () => <Game/>;
+const App = () => <GameContainer/>;
 
 export default App;

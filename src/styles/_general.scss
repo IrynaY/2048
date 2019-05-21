@@ -4,3 +4,38 @@ html, body {
   overflow: auto;
   font-size: 15px;
 }
+
+#app {
+  display: flex;
+}
+
+.btn {
+  background: #BBAD9F;
+  margin: 10px;
+  padding: 20px;
+  font-size: 14px;
+  font-weight: bold;
+  float: right;
+  border-radius: 3px;
+  color: #f9f6f2;
+  border: none;
+
+  &:hover {
+      cursor: pointer;
+      background: #f2b179;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .btn {
+    font-size: 8px;
+    padding: 2px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .btn {
+    font-size: 10px;
+    padding: 5px;
+  }
+}

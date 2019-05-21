@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import './style.scss';
 
 const Score = ({ score }) => (
-  <div>
-    <span>Score: {score}</span>
+  <div className='score'>
+    <p>Score: {score}</p>
   </div>
 );
 
@@ -13,7 +13,7 @@ Score.propTypes = {
 };
 
 Score.defaultProps = {
-  // size: 4,
+  score: 0,
 };
 
 export default Score;

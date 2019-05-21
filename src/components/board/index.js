@@ -5,45 +5,24 @@ import './style.scss';
 import Cell from '../cell';
 
 class Board extends React.Component {
+  renderBoard = matrix => matrix.map((row, i) =>
+    row.map((cell, j) => 
+      <Cell key={`${i}-${j}`} number={cell} />
+    )
+  );
 
-  initBoard = (matrix) => {
-    return matrix.map( (row, i) =>
-      row.map( (cell, j) =>
-        <Cell
-          key={`${i}-${j}`}
-          number={cell}
-        />
-      )
-    );
-  };
-
-  handleKeyboard = (e) => {
-    console.log("++++++++++++")
-    // 37-40
-  };
-
-  componentDidMount() {
-    window.addEventListener('keydown', this.handleKeyboard);
-  }
-  componentWillUnmount() {
-    window.removeEventListener('keydown', this.handleKeyboard);
-  }
   render() {
     const { matrix } = this.props;
     return (
-      <div className='board-wrapper'>
-        {this.initBoard(matrix)}
+      <div id='board' className='board-wrapper'>
+        {this.renderBoard(matrix)}
       </div>
     );
   }
 }
 
 Board.propTypes = {
-  matrix: PropTypes.array,
+  matrix: PropTypes.array.isRequired,
 };
-
-// Board.defaultProps = {
-//   size: 4,
-// };
 
 export default Board;

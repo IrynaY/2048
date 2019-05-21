@@ -4,9 +4,26 @@ const array = [
     [0, 8, 2, 0],
     [2, 0, 0, 0],
     [4, 8, 8, 16],
+  //   [0, 0, 0, 0],
+  //   [0, 0, 0, 0],
+  //   [0, 0, 2, 0],
+  //   [2, 2, 2, 2],
 ]; const n = array.length - 1;
 
 function right() {
+  let m = [2, 2, 2, 2]
+  let arr = [0, 0, 0, 0];
+  let ind = 0
+  for(let row = 0; row <= arr.length; row++){
+    // if(arr[row] === 0)
+        if(m[row] != 0){
+            if(arr[row] === m[row]){
+                // *2 
+                // ind++
+            }
+        }
+  }
+/*
   for(let row = 0; row <= n; row++){
     for(let coll = array[row].length-1; coll > 0; coll--){
 
@@ -32,7 +49,7 @@ function right() {
         }
     }
     console.log(">>>>>>>>>>>>>>>>>>>", array[row])
-  }
+  }*/
 }
 // right();
 function left() {

@@ -1,8 +1,19 @@
 .board-wrapper {
-  border: 1px solid grey;
-  display: flex;
-  flex-wrap: wrap;
   width: 400px;
   height: 400px;
-  padding: 10px;
+  padding: 5px;
+  margin: 5px;
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 10px;
+  background: #bbada0;
+  font-size: 38px;
+}
+
+@media screen and (max-width: 425px) {
+	.board-wrapper {
+		width: 300px;
+    height: 300px;
+    font-size: 18px;
+	}
 }

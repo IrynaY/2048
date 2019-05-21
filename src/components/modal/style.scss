@@ -1,0 +1,37 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-window {
+  position: absolute;
+  background-color: white;
+  padding: 50px 60px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.title{
+  font-size: 25px;
+  font-weight: bold;
+  border-radius: 3px;
+  color: #f67c5f;
+}
+
+@media screen and (max-width: 768px) {
+  .title {
+    font-size: 12px;
+  }
+
+  .modal-window {
+    padding: 3px;
+  }
+}

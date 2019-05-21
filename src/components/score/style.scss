@@ -1,0 +1,14 @@
+.score {
+  width: 180px;
+  padding-left: 15px;
+  font-size: 22px;
+  font-weight: bold;
+  color: #f67c5f;
+}
+
+
+@media screen and (max-width: 425px) {
+  .score {
+    font-size: 14px;
+  }
+}
