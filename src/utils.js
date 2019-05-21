@@ -72,8 +72,9 @@ const calculateLeftShift = matrix => {
   let haveFinish = false;
   let newMatrix = matrix.map( array => {
     const { row, points, haveWon } = calculateRowShift(array);
+    if(haveWon)
+      haveFinish = haveWon;
     totalPoints += points;
-    haveFinish = haveWon;
     return row;
   });
   return { newMatrix, totalPoints, haveFinish };
