@@ -105,78 +105,11 @@ export const shiftRight = (matrix, callback) => {
 export const shiftUp = (matrix, callback) => {
   const rotatedMatrix = rotateMatrix([...matrix]);
   const { newMatrix, totalPoints, haveFinish } = calculateLeftShift(rotatedMatrix);
-  // rotateMatrix(newMatrix);
   callback(rotateMatrix(newMatrix), totalPoints, haveFinish);
 };
 
 export const shiftDown = (matrix, callback) => {
   const rotatedMatrix = rotateMatrix([...matrix]);
   const { newMatrix, totalPoints, haveFinish } = calculateRifhtShift(rotatedMatrix);
-  // rotateMatrix(newMatrix);
   callback(rotateMatrix(newMatrix), totalPoints, haveFinish);
 };
-
-/*
-export const moveLeft = (matrix) => {
-  let f = false;
-  let points = 0;
-  let arr = [...matrix].map( row => {
-    let a = shiftRow(row);
-    points+=a.points;
-    if(a.finish)
-      f = a.finish;
-    return a.row;
-  });
-
-  let newM = [...arr];
-  let zz = checkAvailable(newM);
-  if(JSON.stringify(newM) !== JSON.stringify(matrix)){
-    newM=rand(arr);
-    zz =  checkAvailable(newM);
-    return {newMatrix: newM, points, haveSteps: zz, finish: f};
-  }
-  return {newMatrix: matrix, points, haveSteps: zz, finish: f};
-
-};
-
-export function moveRight(m){
-  let f = false;
-  let points = 0;
-  let qaaa = [...m];
-  qaaa.map( (row, i) => {
-    let r = [...row];
-    r.reverse();
-    let a = shiftRow(r);
-    points+=a.points;
-    if(a.finish)
-      f = a.finish;
-    qaaa[i] = a.row.reverse();
-    return row;
-  });
-
-  let newM = [...qaaa];
-  let zz = checkAvailable(newM);
-  if(JSON.stringify(newM) !== JSON.stringify(m)){
-    newM=rand(newM);
-    zz =  checkAvailable(newM);
-    return {newMatrix: newM, points, haveSteps: zz, finish: f};
-  }
-  return {newMatrix: m, points, haveSteps: zz, finish: f};
-}
-
-export const moveUp = (matrix) => {
-  let rotate = rotateMatrix([...matrix]);
-  const data = moveLeft(rotate);
-  data.newMatrix = rotateMatrix(data.newMatrix);
-  data.haveSteps = checkAvailable(data.newMatrix);
-  return data;
-};
-
-export const moveDown = (matrix) => {
-  let rotate = rotateMatrix([...matrix]);
-  const data = moveRight(rotate);
-  data.newMatrix = rotateMatrix(data.newMatrix);
-  data.haveSteps = checkAvailable(data.newMatrix);
-  return data;
-};
-*/

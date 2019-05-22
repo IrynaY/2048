@@ -31,7 +31,7 @@ class GameContainer extends React.Component {
       if(totalPoints>0)
         updateScore(totalPoints + score);
 
-      if(haveFinish){
+      if(haveFinish) {
         updateGameStatus(haveFinish);
         this.setState({showModal: true });
       }

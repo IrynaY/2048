@@ -4,22 +4,20 @@ import './style.scss';
 
 import Cell from '../cell';
 
-class Board extends React.Component {
-  renderBoard = matrix => matrix.map((row, i) =>
+const Board = ({ matrix }) => {
+  const renderBoard = (matrix) => matrix.map((row, i) =>
     row.map((cell, j) => 
       <Cell key={`${i}-${j}`} number={cell} />
     )
   );
 
-  render() {
-    const { matrix } = this.props;
-    return (
-      <div id='board' className='board-wrapper'>
-        {this.renderBoard(matrix)}
-      </div>
-    );
-  }
-}
+  return (
+    <div id='board' className='board-wrapper'>
+      {renderBoard(matrix)}
+    </div>
+  );
+
+};
 
 Board.propTypes = {
   matrix: PropTypes.array.isRequired,
