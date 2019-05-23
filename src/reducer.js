@@ -3,42 +3,9 @@ import { setRandomEmptyCell } from './utils';
 
 export const initialState = {
   score: 0,
-  // matrix: initMatrix(),
+  matrix: initMatrix(),
   isFinish: false,
-  haveSteps: true,
-  // matrix: [
-  //   [2, 0, 0, 0],
-  //   [2, 0, 2, 0],
-  //   [2, 0, 0, 0],
-  //   [2, 0, 0, 0],
-  // ]
-
-  // ]
-  // matrix: [
-  //   [0, 0, 2, 2],
-  //   [0, 0, 0, 2],
-  //   [0, 0, 0, 2],
-  //   [0, 0, 0, 2],
-
-  // ]
-  // matrix: [
-  //   [0, 0, 0, 0],
-  //   [0, 0, 0, 0],
-  //   [0, 0, 2, 0],
-  //   [2, 2, 2, 2],
-  // ]
-  // matrix: [
-  //   [1024, 1024, 0, 0],
-  //   [0, 0, 0, 0],
-  //   [0, 1024, 2, 0],
-  //   [2, 1024, 2, 2],
-  // ]
-  matrix: [
-    [1024, 104, 110, 10],
-    [14, 13, 12, 11],
-    [15, 1024, 16, 170],
-    [2, 1624, 222, 112],
-  ]
+  haveSteps: true
 };
 
 function initMatrix() {
@@ -48,8 +15,7 @@ function initMatrix() {
     [0, 0, 0, 0],
     [0, 0, 0, 0],
   ];
-  setRandomEmptyCell( setRandomEmptyCell(matrix) );
-  return matrix;
+  return setRandomEmptyCell( setRandomEmptyCell(matrix) );
 }
 
 export default function reducer (state = initialState, action) {

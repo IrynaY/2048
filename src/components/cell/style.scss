@@ -1,18 +1,16 @@
-.cell-wrapper {
+.cell {
   min-width: 25%;
   min-height: 25%;
   border-radius: 15px;
   border: 8px solid $grey;
   font-weight: bold;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   box-sizing: border-box;
   color: white;
   background: $darkGrey;
+  justify-content: center;
+  align-items: center;
+  display: flex;
 }
-
-.cell {}
 
 .cell-2 {
   color: #776e65;
@@ -48,4 +46,11 @@
 }
 .cell-2048 {
   background: #edc22e;
+}
+
+.pushed {
+  animation: blink 0.2s linear;
+}
+@keyframes blink {
+	50%{transform: scale(1.15)}
 }
